@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+
+.bigger{
+    background-color:red!important;
+}
+
+.smaller{
+    background-color: green!important;
+}
