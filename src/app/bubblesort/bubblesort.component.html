@@ -1,7 +1,7 @@
 <div class="panel panel-header">
     <h3>Bubble Sort</h3>
 </div>
-<input-view (randomize)="handleRandomize($event)" (sorter)="sort($event)" (delayIt)="delayed($event)"></input-view>
+<input-view (randomize)="handleRandomize($event)" (sorter)="sort()" (delayIt)="delayed($event)"></input-view>
 <div class="row">
     <div class="col-md-1 array" *ngFor="let item of array">
         {{item}}
