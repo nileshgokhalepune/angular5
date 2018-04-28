@@ -1,33 +1,18 @@
 <div class="panel panel-header">
     <h3>Bubble Sort</h3>
 </div>
+<input-view (randomize)="handleRandomize($event)" (sorter)="sort($event)" (delayIt)="delayed($event)"></input-view>
 <div class="row">
-    <div class="col-md-12">
-        <button class="btn btn-primary" (click)="sort()">Sort</button>
-        <button class="btn btn-danger" (click)="randomGenerator()">Create random numbers</button>
-        <input type="number" placeholder="Enter size of array" [(ngModel)]="size" />
-    </div>
-    <div class="col-md-4">
-        Enter a list of comma delimited numbers to Sort:<input type="text" class="form-control" [(ngModel)]="unsortedValues" (blur)="changeUnsorted()"/>
-    </div>
-    <div class="col-md-4">
-        Delay Animation in milliseconds(1000ms = 1sec): <input type="number" class="form-control" [(ngModel)]="delay" />
+    <div class="col-md-1 array" *ngFor="let item of array">
+        {{item}}
     </div>
 </div>
 <div class="row">
-    <div class="col-md-1 array">
-        <ul class="list-group">
-            <li *ngFor="let item of array" class="list-group-item">{{item}}</li>
-        </ul>
+    <div class="col-md-1 array" *ngFor="let item of sortedarray;let i = index">
+        <span [ngClass]="{'bigger':first===i,'smaller':second===j}">{{item}}</span>
     </div>
-    <div class="col-md-1 array">
-        <ul class="list-group">
-            <li  *ngFor="let item of sortedarray;let i = index" class="list-group-item" >
-                <span [ngClass]="{'bigger':first===i,'smaller':second===j}">{{item}}</span>
-            </li>
-        </ul>
-    </div>
-    <div class="col-md-4">
-        Swapping {{firstValue}} with {{secondValue}}
-    </div>
+</div>
+ 
+<div class="col-md-4">
+    Swapping {{firstValue}} with {{secondValue}}
 </div>
