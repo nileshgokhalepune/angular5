@@ -39,14 +39,14 @@ export class BubbleSort {
             }
         }
     }
-    private delayed(data) {
+    delayed(data) {
         this.delay = data;
     }
 
-    private handleRandomize(data) {
+    handleRandomize(data) {
         this.array = data;
     }
-    private sleep(ms: any) {
+    sleep(ms: any) {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
 }
