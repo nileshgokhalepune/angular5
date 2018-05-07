@@ -1,3 +1,35 @@
 <div class="panel panel-header">
     <h3>Selection Sort</h3>
 </div>
+<input-view (randomize)="handleRandomize($event)" (sorter)="sort()" (delayIt)="delayed($event)" (userValues)="handleRandomize($event)"></input-view>
+<div class="row">
+    <div class="col-md-1 array" *ngFor="let item of array">
+        {{item}}
+    </div>
+</div>
+<div class="row well" *ngIf="sorted && sorted.length>0">
+    <div class="col-md-1 array" *ngFor="let item of sorted;let i = index">
+        <span [ngClass]="{'bg bg-danger h3': i == greater,'bg bg-success h2': i == smaller}">{{item}}</span>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-1">
+        <span *ngIf="sorted && sorted.length>0" class="h2">Swapping {{left}} to {{right}}</span>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        Start Time: {{startDateTime}}
+    </div>
+    <div class="col-md-4">
+        End Time: {{endDateTime}}
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div *ngIf="endDateTime">
+            {{endDateTime - startDateTime}}
+            <span>Difference = {{((endDateTime - startDateTime)/1000)/delay}}</span>
+        </div>
+    </div>
+</div>

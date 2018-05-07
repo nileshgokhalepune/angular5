@@ -12,11 +12,16 @@ export class InputView {
     @Output() randomize = new EventEmitter();
     @Output() sorter = new EventEmitter();
     @Output() delayIt = new EventEmitter();
+    @Output() userValues = new EventEmitter();
     changeUnsorted() {
         if (this.unsortedValues && this.unsortedValues.length > 1) {
             this.array = [];
             this.unsortedValues.split(',').forEach((data: any) => this.array.push(parseInt(data)));
+        } else {
+            this.array = [];
+            this.array.push(this.unsortedValues);
         }
+        this.userValues.emit(this.array);
     }
 
     randomGenerator() {
@@ -27,16 +32,16 @@ export class InputView {
         this.randomize.emit(this.array);
     }
 
-    sort(){
-        if(!this.sorter) {
+    sort() {
+        if (!this.sorter) {
             console.log('Sorting function not specified');
             return;
         }
         this.sorter.emit('');
     }
 
-    changedDelay(){
-        if(this.delayIt){
+    changedDelay() {
+        if (this.delayIt) {
             this.delayIt.emit(this.delay);
         }
     }

@@ -1,0 +1,29 @@
+<div class="panel panel-header">
+    <h3>Prime Numbers</h3>
+</div>
+<input-view (randomize)="handleRandomize($event)" (sorter)="mark()" (delayIt)="delayed($event)" (userValues)="handleRandomize($event)"></input-view>
+<div class="row">
+    <div class="col-md-1 array" *ngFor="let item of array">
+        {{item}}
+    </div>
+</div>
+<div class="row well">
+    <span *ngIf="primes && primes.length <1">No Primes found</span>
+    <div class="col-md-1 array" *ngFor="let item of primes;let i = index">
+        <span>{{item}}</span>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        Start Time: {{startDateTime}}
+    </div>
+    <div class="col-md-4">
+        End Time: {{endDateTime}}
+    </div>
+    <div class="col-md-4">
+        <div *ngIf="endDateTime">
+            {{endDateTime - startDateTime}}
+            <span>Difference = {{((endDateTime - startDateTime)/1000)/delay}}</span>
+        </div>
+    </div>
+</div>

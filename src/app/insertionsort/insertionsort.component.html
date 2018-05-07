@@ -1,0 +1,14 @@
+<div class="panel panel-header">
+    <h3>Insertion Sort</h3>
+</div>
+<input-view (randomize)="handleRandomize($event)" (sorter)="sort()" (delayIt)="delayed($event)" (userValues)="handleRandomize($event)"></input-view>
+<div class="row">
+    <div class="col-md-1 array" *ngFor="let item of array">
+        {{item}}
+    </div>
+</div>
+<div class="row well">
+    <div class="col-md-1 array" *ngFor="let item of sortedarray;let i = index">
+        <span [ngClass]="{'bg bg-danger h3':first===i,'bg bg-success h2':second===i}">{{item}}</span>
+    </div>
+</div>

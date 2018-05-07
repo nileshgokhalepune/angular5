@@ -1,0 +1,10 @@
+<div class="panel panel-header">
+    <h3>Tic Tac Toe</h3>
+</div>
+<div class="row" *ngFor="let row of matrix;let i =index">
+    <div class="col-md-1" *ngFor="let col of matrix[i];let j=index">
+        <div id="{{matrix[i][j]}}" class="cliente" (click)="marked(matrix[i][j])">
+            <img src="../../assets/images/tick-305245_960_720.png">
+        </div>
+    </div>
+</div>

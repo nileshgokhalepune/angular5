@@ -7,13 +7,18 @@ import { BubbleSort } from './bubblesort/bubblesort.component';
 import { AppRouting } from './app.routing';
 import { SelectionSort } from './selectionsort/selectionsort.component';
 import { InputView } from './inputcomponent/input.component';
-
+import { InsertionSort } from './insertionsort/insertionsort.component';
+import { PrimeNumbers } from './primenumbers/primenumbers.component';
+import { TicTacToe } from './tictactoe/tictactoe.component';
 @NgModule({
   declarations: [
     AppComponent,
     BubbleSort,
     SelectionSort,
-    InputView
+    InputView,
+    InsertionSort,
+    PrimeNumbers,
+    TicTacToe
   ],
   imports: [
     BrowserModule,

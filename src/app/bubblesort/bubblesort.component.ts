@@ -11,10 +11,14 @@ export class BubbleSort {
     private temp: any;
     private first: any;
     private second: any;
-    delay: any;
+    delay: any = 1;
     firstValue: any;
     secondValue: any;
+    startDateTime:Date;
+    endDateTime:Date;
     async sort() {
+        this.endDateTime = null;
+        this.startDateTime = new Date();
         this.sortedarray = [];
         this.array.forEach((data: any) => this.sortedarray.push(data));
         for (var i = 0; i < this.sortedarray.length; i++) {
@@ -38,6 +42,7 @@ export class BubbleSort {
                 }
             }
         }
+        this.endDateTime = new Date();
     }
     delayed(data) {
         this.delay = data;
@@ -45,6 +50,7 @@ export class BubbleSort {
 
     handleRandomize(data) {
         this.array = data;
+        this.sortedarray = [];
     }
     sleep(ms: any) {
         return new Promise(resolve => setTimeout(resolve, ms));
