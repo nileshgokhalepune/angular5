@@ -34,4 +34,8 @@ export class PrimeNumbers {
         this.array = data;
         this.primes = [];
     }
+    
+    delayed(val) {
+        this.delay = val;
+    }
 }
